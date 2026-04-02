@@ -1,2 +1,2 @@
-# Just-Dance
+# Sit-Posture-Recognition
 * Let's start!
