@@ -1,2 +1,2 @@
-# Sit-Posture-Recognition
+# Sitting-Posture-Recognition-with-MediaPipe
 * Let's start!
