@@ -9,6 +9,8 @@ class PoseDetector:
         self.mp_drawing = mp.solutions.drawing_utils
     
     def process_frame(self, frame):
+        # 水平翻转帧，实现镜像效果
+        frame = cv2.flip(frame, 1)
         h, w = frame.shape[:2]
         image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         keypoints = self.pose.process(image)
