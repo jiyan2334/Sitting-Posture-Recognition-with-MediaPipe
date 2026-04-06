@@ -18,9 +18,12 @@ Sitting-Posture-Recognition-with-MediaPipe/
 │   │   └── settings.py    # 应用配置类
 │   ├── core/              # 核心功能模块
 │   │   ├── __init__.py
-│   │   ├── reminder/      # 提醒功能（包含坐姿持续时间监测）
+│   │   ├── tracking/      # 时间统计和日志生成
 │   │   │   ├── __init__.py
-│   │   │   └── reminder.py # 多模态提醒功能和坐姿持续时间监测
+│   │   │   └── tracking.py # 坐姿持续时间监测和日志生成
+│   │   ├── reminder/      # 提醒功能
+│   │   │   ├── __init__.py
+│   │   │   └── reminder.py # 多模态提醒功能
 │   │   └── ui/            # UI功能
 │   │       ├── __init__.py
 │   │       └── ui_handler.py # 优化的UI设计和响应式布局
@@ -40,8 +43,10 @@ Sitting-Posture-Recognition-with-MediaPipe/
    - `settings.py`：存储应用配置，如坐姿阈值、提醒方式、窗口大小等。
 
 2. **核心功能模块（core）**
+   - **时间统计和日志生成（tracking）**：
+     - `tracking.py`：监测坐姿持续时间，记录每种坐姿的开始时间和持续时间，支持会话数据的保存和日志生成。
    - **提醒功能（reminder）**：
-     - `reminder.py`：实现多模态提醒（包括声音提醒和系统通知）和坐姿持续时间监测，记录每种坐姿的开始时间和持续时间，支持会话数据的保存。
+     - `reminder.py`：实现多模态提醒，包括声音提醒和系统通知。
    - **UI功能（ui）**：
      - `ui_handler.py`：实现优化的UI设计，包括坐姿状态显示、持续时间显示、操作提示等，支持响应式布局和全屏模式。
 
@@ -61,7 +66,8 @@ Sitting-Posture-Recognition-with-MediaPipe/
 2. **检测**：`app.py` → `pose_detector.py`（处理画面，返回坐姿状态）
 3. **工具**：`pose_detector.py` → `pose_utils.py`（使用 `findAngle` 计算角度）
 4. **业务逻辑**：
-   - `app.py` → `reminder.py`（更新坐姿持续时间，当持续时间超过阈值时触发提醒）
+   - `app.py` → `tracking.py`（更新坐姿持续时间）
+   - `app.py` → `reminder.py`（当持续时间超过阈值时触发提醒）
    - `app.py` → `ui_handler.py`（绘制UI，显示状态和提醒）
 5. **输出**：处理后的画面 → 显示给用户
 
@@ -143,7 +149,7 @@ Sitting-Posture-Recognition-with-MediaPipe/
    - 修改 `detector` 目录下的代码，使用更先进的检测算法。
 
 3. **添加数据可视化**：
-   - 基于 `reminder` 模块保存的数据，添加数据可视化功能。
+   - 基于 `tracking` 模块保存的数据，添加数据可视化功能。
 
 4. **跨平台支持**：
    - 确保在 Windows、macOS 和 Linux 等主流操作系统上都能正常运行。

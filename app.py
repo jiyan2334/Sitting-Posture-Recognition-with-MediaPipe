@@ -1,6 +1,7 @@
 import cv2
 from src.detector.pose_detector import PoseDetector
 from src.config.settings import Settings
+from src.core.tracking.tracking import Tracking
 from src.core.reminder.reminder import Reminder
 from src.core.ui.ui_handler import UIHandler
 
@@ -16,11 +17,13 @@ def main():
     # 创建姿态检测器实例
     detector = PoseDetector()
     
-    # 创建提醒器（包含持续时间监测）
+    # 创建时间统计和日志生成器
+    tracking = Tracking(settings.DATA_DIR)
+    
+    # 创建提醒器
     reminder = Reminder(
         enable_sound=settings.ENABLE_SOUND,
-        enable_notification=settings.ENABLE_NOTIFICATION,
-        data_dir=settings.DATA_DIR
+        enable_notification=settings.ENABLE_NOTIFICATION
     )
     
     # 创建UI处理器
@@ -47,8 +50,10 @@ def main():
             # 处理每一帧
             image, results = detector.process_frame(frame)
             
-            # 更新坐姿持续时间并检查是否需要提醒
-            duration = reminder.update_posture(results)
+            # 更新坐姿持续时间
+            duration = tracking.update_posture(results)
+            
+            # 检查是否需要提醒
             if results != "Good posture" and results != "No person detected":
                 if duration > settings.POSTURE_THRESHOLD:
                     reminder.remind(f"不良坐姿已持续 {int(duration)} 秒，请调整坐姿！", results)
@@ -68,7 +73,7 @@ def main():
                 
     finally:
         # 保存会话数据
-        reminder.save_session()
+        tracking.save_session()
         
         # 释放资源
         cap.release()
