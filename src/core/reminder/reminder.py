@@ -1,13 +1,17 @@
 import time
 import threading
 import pygame
+import os
 
 
 class MultiModalReminder:
     def __init__(self):
         # 核心配置
         self.sound_enabled = True
-        self.audio_file = "E:\\大学材料\\比赛材料\\设计大赛\\Sitting-Posture-Recognition-with-MediaPipe-main\\reminder.mp3"
+        # 获取项目根目录的绝对路径
+        self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+        # 构建音频文件的绝对路径
+        self.audio_file = os.path.join(self.base_dir, "src", "core", "reminder", "audio", "alert.mp3")
         self.first_remind_delay = 5      # 首次延迟5秒
         self.repeat_remind_interval = 10  # 重复间隔10秒
 
