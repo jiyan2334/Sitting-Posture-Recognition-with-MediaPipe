@@ -109,12 +109,16 @@ def all_detection(coordinates):  # 接收坐标字典作为参数
         tmp = 'Looking down'
     elif yangtou_inclination > 95:
         tmp = 'Looking up'
-    elif abs(angle) < 30: #wsy\cwy
-        if abs(gaodijian_inclination) < 85:
-            tmp = 'Uneven shoulders'
-    elif abs(angle) >= 30:
-        if abs(gaodijian_inclination) < 80:
-            tmp = 'Uneven shoulders'
+    # elif abs(angle) < 30: #wsy\cwy
+    #     if abs(gaodijian_inclination) < 85:
+    #         tmp = 'Uneven shoulders'
+    # elif abs(angle) >= 30:
+    #     if abs(gaodijian_inclination) < 80:
+    #         tmp = 'Uneven shoulders'
+    elif abs(gaodijian_inclination) < 80:
+        tmp = 'Uneven shoulders'
+    elif abs(gaodijian_inclination) < 85 and abs(angle) < 30:
+        tmp = 'Uneven shoulders'
     elif waitou_inclination < 0 and waitou_inclination > -75:
         tmp = 'Left tilt'
     elif waitou_inclination > 0 and waitou_inclination < 75:
