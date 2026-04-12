@@ -180,6 +180,7 @@ class UIHandler(QMainWindow):
         self.video_label.setStyleSheet("""
             QLabel {
                 background-color: #1a1a1a;
+                border: 1px solid #d0d8e6;
                 border-radius: 10px;
                 color: #ffffff;
                 font-size: 14px;
@@ -225,9 +226,10 @@ class UIHandler(QMainWindow):
         self.bottom_status_label.setAlignment(Qt.AlignLeft)
         self.bottom_status_label.setStyleSheet("""
             QLabel {
-                color: #666666;
-                font-size: 12px;
-                padding: 5px;
+                color: #777777;
+                font-size: 15px;
+                font-weight: bold;
+                padding: 8px;
                 background: transparent;
                 qproperty-wordWrap: false; /* 禁止自动换行 */
             }
@@ -238,100 +240,196 @@ class UIHandler(QMainWindow):
         """应用现代化蓝白柔和UI样式（全圆角+卡片式）"""
         self.setStyleSheet("""
             QMainWindow {
-                background-color: #f5f7fa;
-            }
-            QGroupBox {
-                background-color: #ffffff;
-                border: 1px solid #e5e7eb;
-                border-radius: 12px;
-                margin-top: 20px;
-                font-size: 18px;
-                font-weight: 600;
-                color: #333333;
-                padding: 16px 12px 12px 12px;
-            }
-            QGroupBox::title {
-                subcontrol-origin: margin;
-                subcontrol-position: top left;
-                left: 16px;
-                top: 0px;
-                padding: 0 8px;
-                background-color: #ffffff;
-            }
-            QPushButton {
-                font-family: "Microsoft YaHei";
-                font-size: 16px;
-                border-radius: 8px;
-                padding: 10px 12px;
-                min-height: 45px;
-            }
-            QPushButton#start_btn {
-                background-color: #22c55e;
-                color: white;
-                border: none;
-            }
-            QPushButton#start_btn:hover {
-                background-color: #16a34a;
-            }
-            QPushButton#pause_btn {
-                background-color: #f59e0b;
-                color: white;
-                border: none;
-            }
-            QPushButton#pause_btn:hover {
-                background-color: #d97706;
-            }
-            QPushButton#stop_btn {
-                background-color: #ef4444;
-                color: white;
-                border: none;
-            }
-            QPushButton#stop_btn:hover {
-                background-color: #dc2626;
-            }
-            QPushButton#settings_btn {
-                background-color: #3b82f6;
-                color: white;
-                border: none;
-            }
-            QPushButton#settings_btn:hover {
-                background-color: #2563eb;
-            }
-            QPushButton#report_btn {
-                background-color: #8b5cf6;
-                color: white;
-                border: none;
-            }
-            QPushButton#report_btn:hover {
-                background-color: #7c3aed;
-            }
-            QLabel {
-                font-family: "Microsoft YaHei";
-                color: #333333;
-                font-size: 16px;
-            }
-            QFormLayout QLabel {
-                font-size: 16px;
-                color: #64748b;
-            }
-            /* 修复设置窗口文字显示 */
-            QDialog QGroupBox {
-                font-size: 14px;
-                padding: 15px;
-            }
-            QDialog QLabel {
-                font-size: 13px;
-                min-height: 20px;
-            }
-            QDialog QCheckBox {
-                font-size: 13px;
-                min-height: 20px;
-            }
-            QDialog QDoubleSpinBox {
-                font-size: 13px;
-                min-height: 28px;
-                min-width: 80px;
-            }
+            background: qlineargradient(
+                x1: 0, y1: 0, x2: 1, y2: 1,
+                stop: 0 #fff9e6, stop: 0.25 #d9f9e6,
+                stop: 0.5 #d9f2ff, stop: 0.75 #f2e6ff,
+                stop: 1 #ffe6f2
+            );
+        }
+
+        /* 统一卡片样式 + 轻微阴影 */
+        QGroupBox {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #d0d8e6;
+            border-radius: 12px;
+            margin-top: 16px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #333333;
+            padding: 16px 12px 12px 12px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 统一标题框样式（淡蓝圆角） */
+        QGroupBox::title {
+            subcontrol-origin: margin;
+            subcontrol-position: top left;
+            left: 12px;
+            top: 0px;
+            padding: 4px 12px;
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #1890ff;
+        }
+
+        /* 按钮通用样式 + 过渡动画 */
+        QPushButton {
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 12px 16px;
+            min-height: 50px;
+            border: none;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        /* 开始按钮 */
+        QPushButton#start_btn {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #b4f988, stop:1 #00c853);
+        }
+        QPushButton#start_btn:hover {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #99e670, stop:1 #00a843);
+            transform: scale(1.02);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 暂停/继续 */
+        QPushButton#pause_btn {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffcc4d, stop:1 #ff6d00);
+        }
+        QPushButton#pause_btn:hover {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffb733, stop:1 #ff5700);
+            transform: scale(1.02);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 停止 */
+        QPushButton#stop_btn {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffab91, stop:1 #f50057);
+        }
+        QPushButton#stop_btn:hover {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ff8a80, stop:1 #d5004f);
+            transform: scale(1.02);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 设置 */
+        QPushButton#settings_btn {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #82b1ff, stop:1 #2979ff);
+        }
+        QPushButton#settings_btn:hover {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #699eff, stop:1 #1565c0);
+            transform: scale(1.02);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 报告 */
+        QPushButton#report_btn {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ea80fc, stop:1 #9c27b0);
+        }
+        QPushButton#report_btn:hover {
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #d81b60, stop:1 #7b1fa2);
+            transform: scale(1.02);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 统一文字样式 */
+        QLabel {
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* 调整建议框样式 */
+        #suggestion_frame {
+            background-color: #f0f9ff;
+            border: 1px solid #91d5ff;
+            border-radius: 12px;
+            padding: 8px 12px;
+        }
+        #suggestion_title {
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            border-radius: 8px;
+            padding: 2px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1890ff;
+        }
+
+        /* 监控区域样式 */
+        #camera_label {
+            background-color: #000000;
+            border: 1px solid #d0d8e6;
+            border-radius: 8px;
+        }
+
+        /* 状态文字排版优化 */
+        #status_label, #analysis_label {
+            padding: 8px 12px;
+            line-height: 1.8;
+        }
+
+        /* 弹窗样式不变 */
+        QDialog {
+            background-color: #ffffff;
+        }
+        QDialog QGroupBox {
+            font-size: 14px;
+            padding: 15px;
+            color: #000000;
+            background-color: #ffffff;
+        }
+        QDialog QLabel {
+            font-size: 13px;
+            min-height: 20px;
+            color: #000000;
+        }
+        QDialog QCheckBox {
+            font-size: 13px;
+            min-height: 20px;
+            color: #000000;
+        }
+        QDialog QDoubleSpinBox, QDialog QSpinBox {
+            font-size: 13px;
+            min-height: 28px;
+            min-width: 80px;
+            color: #000000;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        QDialog QComboBox {
+            color: #000000;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        QDialog QPushButton {
+            color: #ffffff;
+            background-color: #2979ff;
+            border: none;
+            border-radius: 6px;
+            padding: 4px 10px;
+            min-height: 28px;
+            min-width: 90px;
+            font-size: 14px;
+        }
+
+        QStatusBar {
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+            color: #666666;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 12px;
+        }
         """)
 
     def update_display(self, frame: Optional[np.ndarray] = None,
@@ -572,8 +670,8 @@ class SettingsDialog(QDialog):
         btn_save = QPushButton("保存设置")
         btn_cancel = QPushButton("取消")
         #修改 cwy\zyx
-        btn_save.setFixedHeight(35)
-        btn_cancel.setFixedHeight(35)
+        btn_save.setFixedSize(90,28)
+        btn_cancel.setFixedSize(90,28)
         btn_save.clicked.connect(self.accept)
         btn_cancel.clicked.connect(self.reject)
         btn_layout.addStretch()
