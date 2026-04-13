@@ -1,0 +1,102 @@
+{
+  "start_time": "2026-04-13T22:06:59.149538",
+  "end_time": "2026-04-13T22:07:34.215533",
+  "total_duration": 35.065995,
+  "posture_data": [
+    {
+      "posture": "Good posture",
+      "duration": 0.6049923896789551,
+      "timestamp": "2026-04-13T22:06:59.149538"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 2.7810981273651123,
+      "timestamp": "2026-04-13T22:06:59.754530"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 4.427785873413086,
+      "timestamp": "2026-04-13T22:07:02.535628"
+    },
+    {
+      "posture": "Leaning on desk",
+      "duration": 5.647921562194824,
+      "timestamp": "2026-04-13T22:07:06.963414"
+    },
+    {
+      "posture": "paused",
+      "duration": 4.100902795791626,
+      "timestamp": "2026-04-13T22:07:12.611336"
+    },
+    {
+      "posture": "Leaning on desk",
+      "duration": 2.395364761352539,
+      "timestamp": "2026-04-13T22:07:16.713248"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.8722622394561768,
+      "timestamp": "2026-04-13T22:07:19.107603"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.026968717575073242,
+      "timestamp": "2026-04-13T22:07:19.979866"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 1.1925787925720215,
+      "timestamp": "2026-04-13T22:07:20.006834"
+    },
+    {
+      "posture": "Looking up",
+      "duration": 1.5068717002868652,
+      "timestamp": "2026-04-13T22:07:21.199413"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.180267333984375,
+      "timestamp": "2026-04-13T22:07:22.706285"
+    },
+    {
+      "posture": "Looking up",
+      "duration": 0.87434983253479,
+      "timestamp": "2026-04-13T22:07:22.886552"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.6576261520385742,
+      "timestamp": "2026-04-13T22:07:23.760902"
+    },
+    {
+      "posture": "Looking up",
+      "duration": 0.029261350631713867,
+      "timestamp": "2026-04-13T22:07:24.418528"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.4069840908050537,
+      "timestamp": "2026-04-13T22:07:24.447789"
+    },
+    {
+      "posture": "Looking up",
+      "duration": 0.6239418983459473,
+      "timestamp": "2026-04-13T22:07:24.854773"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.5960311889648438,
+      "timestamp": "2026-04-13T22:07:25.478715"
+    },
+    {
+      "posture": "Looking up",
+      "duration": 6.519813537597656,
+      "timestamp": "2026-04-13T22:07:26.074747"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 1.6209731101989746,
+      "timestamp": "2026-04-13T22:07:32.594560"
+    }
+  ]
+}

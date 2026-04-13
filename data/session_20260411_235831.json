@@ -1,0 +1,32 @@
+{
+  "start_time": "2026-04-11T23:58:31.272448",
+  "end_time": "2026-04-11T23:58:41.843616",
+  "total_duration": 10.571168,
+  "posture_data": [
+    {
+      "posture": "Good posture",
+      "duration": 2.702256679534912,
+      "timestamp": "2026-04-11T23:58:31.272448"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 4.452294111251831,
+      "timestamp": "2026-04-11T23:58:33.974705"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 1.379913568496704,
+      "timestamp": "2026-04-11T23:58:38.426999"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 3.416616678237915,
+      "timestamp": "2026-04-11T23:58:38.426999"
+    },
+    {
+      "posture": "paused",
+      "duration": 2.036703109741211,
+      "timestamp": "2026-04-11T23:58:39.806912"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "start_time": "2026-04-11T14:41:17.062275",
+  "end_time": "2026-04-11T14:41:26.278806",
+  "total_duration": 9.216531,
+  "posture_data": [
+    {
+      "posture": "Leaning on desk",
+      "duration": 6.558890342712402,
+      "timestamp": "2026-04-11T14:41:17.062275"
+    },
+    {
+      "posture": "Leaning on desk",
+      "duration": 9.216531038284302,
+      "timestamp": "2026-04-11T14:41:17.062275"
+    },
+    {
+      "posture": "paused",
+      "duration": 2.6576406955718994,
+      "timestamp": "2026-04-11T14:41:23.621166"
+    }
+  ]
+}

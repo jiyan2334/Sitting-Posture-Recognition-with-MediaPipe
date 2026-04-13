@@ -1,0 +1,17 @@
+{
+  "start_time": "2026-04-11T11:48:10.517241",
+  "end_time": "2026-04-11T11:48:21.277262",
+  "total_duration": 10.760021,
+  "posture_data": [
+    {
+      "posture": "Uneven shoulders",
+      "duration": 1.3400318622589111,
+      "timestamp": "2026-04-11T11:48:10.517241"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 9.419990062713623,
+      "timestamp": "2026-04-11T11:48:11.857272"
+    }
+  ]
+}

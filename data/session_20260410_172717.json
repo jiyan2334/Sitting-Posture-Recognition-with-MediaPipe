@@ -1,0 +1,42 @@
+{
+  "start_time": "2026-04-10T17:27:17.758563",
+  "end_time": "2026-04-10T17:27:49.184743",
+  "total_duration": 31.42618,
+  "posture_data": [
+    {
+      "posture": "Leaning on desk",
+      "duration": 0.1942000389099121,
+      "timestamp": "2026-04-10T17:27:17.758563"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.025476932525634766,
+      "timestamp": "2026-04-10T17:27:17.952763"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.03937387466430664,
+      "timestamp": "2026-04-10T17:27:17.978240"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 14.874176502227783,
+      "timestamp": "2026-04-10T17:27:18.017614"
+    },
+    {
+      "posture": "paused",
+      "duration": 9.774098873138428,
+      "timestamp": "2026-04-10T17:27:32.891790"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.04006361961364746,
+      "timestamp": "2026-04-10T17:27:42.665889"
+    },
+    {
+      "posture": "Leaning on desk",
+      "duration": 6.478790044784546,
+      "timestamp": "2026-04-10T17:27:42.705953"
+    }
+  ]
+}
