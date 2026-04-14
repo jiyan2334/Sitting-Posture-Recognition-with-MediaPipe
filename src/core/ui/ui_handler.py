@@ -1558,7 +1558,7 @@ class ReportDialog(QDialog):
                     sizes.append(others)
 
                 # 优化颜色
-                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6']
+                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#9999ff']
                 plot_colors = [colors[i % len(colors)] for i in range(len(labels))]
 
                 # 绘制饼图
@@ -1785,7 +1785,7 @@ class ReportDialog(QDialog):
                     sizes.append(others)
 
                 # 颜色配置
-                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6']
+                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#9999ff']
                 plot_colors = [colors[i % len(colors)] for i in range(len(labels))]
 
                 # 绘制饼图

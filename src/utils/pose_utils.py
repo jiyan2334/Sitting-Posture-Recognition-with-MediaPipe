@@ -103,18 +103,12 @@ def all_detection(coordinates):  # 接收坐标字典作为参数
     right_mouth_y = coordinates['right_mouth'][1]
     left_shoulder_y = coordinates['left_shoulder'][1]
     right_shoulder_y = coordinates['right_shoulder'][1]
-    if (left_shoulder_y_norm + right_shoulder_y_norm) > 1.6:
+    if (left_shoulder_y_norm + right_shoulder_y_norm) > 1.7:
         tmp = 'Leaning on desk'
     elif ditou_inclination < 115:
         tmp = 'Looking down'
     elif yangtou_inclination > 95:
         tmp = 'Looking up'
-    # elif abs(angle) < 30: #wsy\cwy
-    #     if abs(gaodijian_inclination) < 85:
-    #         tmp = 'Uneven shoulders'
-    # elif abs(angle) >= 30:
-    #     if abs(gaodijian_inclination) < 80:
-    #         tmp = 'Uneven shoulders'
     elif abs(gaodijian_inclination) < 80:
         tmp = 'Uneven shoulders'
     elif abs(gaodijian_inclination) < 85 and abs(angle) < 30:
