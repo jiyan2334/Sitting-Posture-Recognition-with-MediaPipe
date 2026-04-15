@@ -211,6 +211,10 @@ Sitting-Posture-Recognition-with-MediaPipe/
 2. **分支管理**：
    - 使用形如 xxx-feature 的分支开发新功能。
 
+## 致谢
+本项目包含基于 [Sitting-Posture-Detection](https://github.com/WangLeYuu/Sitting-Posture-Detection.git) 的代码，该项目使用 Apache License 2.0 许可证分发。
+Copyright 2024 WangLeYuu
+
 ## 许可证
 
 本项目采用 MIT 许可证，详见 LICENSE 文件。
