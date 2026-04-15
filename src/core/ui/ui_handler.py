@@ -177,7 +177,7 @@ class UIHandler(QMainWindow):
 
         layout.addRow("当前坐姿:", self.lbl_posture)
         layout.addRow("不良持续:", self.lbl_duration)
-        layout.addRow("今日不良:", self.lbl_bad_count)
+        layout.addRow("不良次数:", self.lbl_bad_count)
         parent_layout.addWidget(group)
 
     def _create_video_section(self, parent_layout):
@@ -1558,7 +1558,7 @@ class ReportDialog(QDialog):
                     sizes.append(others)
 
                 # 优化颜色
-                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#9999ff']
+                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#9999ff', '#109688']
                 plot_colors = [colors[i % len(colors)] for i in range(len(labels))]
 
                 # 绘制饼图
@@ -1785,7 +1785,7 @@ class ReportDialog(QDialog):
                     sizes.append(others)
 
                 # 颜色配置
-                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#9999ff']
+                colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6', '#9999ff', '#109688']
                 plot_colors = [colors[i % len(colors)] for i in range(len(labels))]
 
                 # 绘制饼图
@@ -1966,7 +1966,7 @@ class ReportDialog(QDialog):
 
                 # 绘制纵向连接线
                 ax.plot([current_end, current_end], [current_value - 0.4, next_value + 0.4],
-                        color=mean_color, linewidth=1, alpha=0.8)
+                        color=mean_color, linewidth=0, alpha=0.8)
 
         # 设置纵轴标签
         ax.set_yticks(range(len(posture_order)))

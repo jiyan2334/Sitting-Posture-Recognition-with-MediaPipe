@@ -1,0 +1,72 @@
+{
+  "start_time": "2026-04-14T20:04:46.707939",
+  "end_time": "2026-04-14T20:05:26.225424",
+  "total_duration": 39.517485,
+  "posture_data": [
+    {
+      "posture": "Good posture",
+      "duration": 0.26024794578552246,
+      "timestamp": "2026-04-14T20:04:46.707939"
+    },
+    {
+      "posture": "Leaning on desk",
+      "duration": 0.4898357391357422,
+      "timestamp": "2026-04-14T20:04:46.968187"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 19.05076241493225,
+      "timestamp": "2026-04-14T20:04:47.458023"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.1883561611175537,
+      "timestamp": "2026-04-14T20:05:06.508785"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 10.376826047897339,
+      "timestamp": "2026-04-14T20:05:06.697141"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.43567609786987305,
+      "timestamp": "2026-04-14T20:05:17.073967"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 2.63850474357605,
+      "timestamp": "2026-04-14T20:05:17.509643"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.2427082061767578,
+      "timestamp": "2026-04-14T20:05:20.148148"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 2.0201969146728516,
+      "timestamp": "2026-04-14T20:05:20.390856"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.04291272163391113,
+      "timestamp": "2026-04-14T20:05:22.411053"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 0.06359744071960449,
+      "timestamp": "2026-04-14T20:05:22.453966"
+    },
+    {
+      "posture": "Uneven shoulders",
+      "duration": 0.8512530326843262,
+      "timestamp": "2026-04-14T20:05:22.517563"
+    },
+    {
+      "posture": "Good posture",
+      "duration": 2.8566081523895264,
+      "timestamp": "2026-04-14T20:05:23.368816"
+    }
+  ]
+}

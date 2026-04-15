@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "generated_at": "2026-04-14T11:44:30.742439",
+  "generated_at": "2026-04-15T15:20:44.785012",
   "months": {
     "01": {
       "month": 1,
@@ -113,48 +113,6 @@
               }
             },
             {
-              "log_filename": "session_20260414_113418.json",
-              "total_duration": 56.671129,
-              "postures": {
-                "Good posture": 0.0,
-                "Looking down": 20.311612844467163,
-                "Looking up": 0.0,
-                "Uneven shoulders": 1.271526575088501,
-                "Left tilt": 0.06911158561706543,
-                "Right tilt": 0.0,
-                "Leaning on desk": 34.96390676498413,
-                "No person detected": 0.05497121810913086
-              }
-            },
-            {
-              "log_filename": "session_20260414_113739.json",
-              "total_duration": 40.879825,
-              "postures": {
-                "Good posture": 14.069600582122803,
-                "Looking down": 0.0,
-                "Looking up": 0.43520569801330566,
-                "Uneven shoulders": 0.0,
-                "Left tilt": 13.654317617416382,
-                "Right tilt": 8.717087507247925,
-                "Leaning on desk": 4.003613471984863,
-                "No person detected": 0.0
-              }
-            },
-            {
-              "log_filename": "session_20260414_113909.json",
-              "total_duration": 20.770801,
-              "postures": {
-                "Good posture": 3.085965394973755,
-                "Looking down": 15.486834049224854,
-                "Looking up": 0.25395703315734863,
-                "Uneven shoulders": 1.1472280025482178,
-                "Left tilt": 0.0,
-                "Right tilt": 0.0,
-                "Leaning on desk": 0.0,
-                "No person detected": 0.0711512565612793
-              }
-            },
-            {
               "log_filename": "session_20260414_114251.json",
               "total_duration": 99.311137,
               "postures": {
@@ -166,6 +124,137 @@
                 "Right tilt": 0.11832809448242188,
                 "Leaning on desk": 2.1738100051879883,
                 "No person detected": 4.866853713989258
+              }
+            },
+            {
+              "log_filename": "session_20260414_160114.json",
+              "total_duration": 50.703247,
+              "postures": {
+                "Good posture": 19.90809178352356,
+                "Looking down": 0.30237436294555664,
+                "Looking up": 0.4670705795288086,
+                "Uneven shoulders": 15.468829154968262,
+                "Left tilt": 0.0,
+                "Right tilt": 0.9785099029541016,
+                "Leaning on desk": 12.712572813034058,
+                "No person detected": 0.8657989501953125
+              }
+            },
+            {
+              "log_filename": "session_20260414_200446.json",
+              "total_duration": 39.517485,
+              "postures": {
+                "Good posture": 37.266743659973145,
+                "Looking down": 0.0,
+                "Looking up": 0.0,
+                "Uneven shoulders": 1.7609062194824219,
+                "Left tilt": 0.0,
+                "Right tilt": 0.0,
+                "Leaning on desk": 0.4898357391357422,
+                "No person detected": 0.0
+              }
+            },
+            {
+              "log_filename": "session_20260414_200554.json",
+              "total_duration": 294.863828,
+              "postures": {
+                "Good posture": 123.83651351928711,
+                "Looking down": 14.90628433227539,
+                "Looking up": 0.43190717697143555,
+                "Uneven shoulders": 15.12897276878357,
+                "Left tilt": 0.0,
+                "Right tilt": 4.872607469558716,
+                "Leaning on desk": 7.038428783416748,
+                "No person detected": 0.0
+              }
+            },
+            {
+              "log_filename": "session_20260414_234731.json",
+              "total_duration": 1200.192128,
+              "postures": {
+                "Good posture": 27.346386909484863,
+                "Looking down": 8.970657110214233,
+                "Looking up": 1.3828537464141846,
+                "Uneven shoulders": 1131.2603821754456,
+                "Left tilt": 5.555635690689087,
+                "Right tilt": 2.977200984954834,
+                "Leaning on desk": 2.161579132080078,
+                "No person detected": 0.0
+              }
+            }
+          ]
+        },
+        "15": {
+          "date": "2026-04-15",
+          "sessions": [
+            {
+              "log_filename": "session_20260415_004740.json",
+              "total_duration": 823.435907,
+              "postures": {
+                "Good posture": 822.0665326118469,
+                "Looking down": 0.0,
+                "Looking up": 0.0,
+                "Uneven shoulders": 1.2489583492279053,
+                "Left tilt": 0.0,
+                "Right tilt": 0.0,
+                "Leaning on desk": 0.0,
+                "No person detected": 0.12041640281677246
+              }
+            },
+            {
+              "log_filename": "session_20260415_124832.json",
+              "total_duration": 430.757988,
+              "postures": {
+                "Good posture": 289.9270339012146,
+                "Looking down": 27.577491998672485,
+                "Looking up": 7.8005759716033936,
+                "Uneven shoulders": 22.00487780570984,
+                "Left tilt": 2.5191712379455566,
+                "Right tilt": 1.9938771724700928,
+                "Leaning on desk": 15.917820453643799,
+                "No person detected": 0.0440824031829834
+              }
+            },
+            {
+              "log_filename": "session_20260415_125624.json",
+              "total_duration": 235.069523,
+              "postures": {
+                "Good posture": 121.62594556808472,
+                "Looking down": 65.18306040763855,
+                "Looking up": 1.7324249744415283,
+                "Uneven shoulders": 20.336029291152954,
+                "Left tilt": 3.3369739055633545,
+                "Right tilt": 4.865907669067383,
+                "Leaning on desk": 12.85216498374939,
+                "No person detected": 5.137017011642456
+              }
+            },
+            {
+              "log_filename": "session_20260415_130208.json",
+              "total_duration": 456.645879,
+              "postures": {
+                "Good posture": 106.08136582374573,
+                "Looking down": 5.737288236618042,
+                "Looking up": 3.3314671516418457,
+                "Uneven shoulders": 316.28247261047363,
+                "Left tilt": 1.6459524631500244,
+                "Right tilt": 0.8295547962188721,
+                "Leaning on desk": 2.0565335750579834,
+                "No person detected": 0.0
+              }
+            },
+            {
+              "log_filename": "session_20260415_131227.json",
+              "total_duration": 7696.863618,
+              "postures": {
+                "Good posture": 2136.1985449790955,
+                "Looking down": 931.7366282939911,
+                "Looking up": 84.46873879432678,
+                "Uneven shoulders": 1304.2086536884308,
+                "Left tilt": 944.5405414104462,
+                "Right tilt": 102.10513305664062,
+                "Leaning on desk": 282.44407653808594,
+                "No person detected": 1911.1613011360168
               }
             }
           ]

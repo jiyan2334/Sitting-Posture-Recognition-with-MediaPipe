@@ -1,0 +1,12 @@
+{
+    "enable_sound": true,
+    "alert_volume": 0.5,
+    "show_landmarks": true,
+    "show_lines": true,
+    "camera_index": 0,
+    "window_title": "智能坐姿识别系统 V1.0",
+    "window_width": 1200,
+    "window_height": 800,
+    "enable_fullscreen": false,
+    "posture_threshold": 3
+}

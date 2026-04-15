@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-本项目使用 MediaPipe 实现实时坐姿检测，能够识别不良坐姿并给出相应提醒。
+本项目使用 MediaPipe 实现实时坐姿检测，能够识别不良坐姿并给出相应提醒。同时支持批量图片检测功能，方便用户分析历史图片数据。
 
 ## 项目架构
 
@@ -11,10 +11,11 @@
 ```
 Sitting-Posture-Recognition-with-MediaPipe/
 ├── app.py                 # 新的主入口文件（整合所有功能）
-├── main.py                # 原有主入口文件（保持不变）
+├── main.py                # 原有测试入口文件
 ├── src/
 │   ├── config/            # 配置模块
 │   │   ├── __init__.py
+│   │   ├── app_config.json # 应用配置文件
 │   │   └── settings.py    # 应用配置类
 │   ├── core/              # 核心功能模块
 │   │   ├── __init__.py
@@ -23,7 +24,9 @@ Sitting-Posture-Recognition-with-MediaPipe/
 │   │   │   └── tracking.py # 坐姿持续时间监测和日志生成
 │   │   ├── reminder/      # 提醒功能
 │   │   │   ├── __init__.py
-│   │   │   └── reminder.py # 多模态提醒功能
+│   │   │   ├── reminder.py # 多模态提醒功能
+│   │   │   └── audio/      # 音频文件目录
+│   │   │       └── alert.mp3 # 提醒音频
 │   │   └── ui/            # UI功能
 │   │       ├── __init__.py
 │   │       └── ui_handler.py # 优化的UI设计和响应式布局
@@ -33,7 +36,10 @@ Sitting-Posture-Recognition-with-MediaPipe/
 │   └── utils/             # 工具模块
 │       ├── __init__.py
 │       └── pose_utils.py  # 姿态检测相关工具函数
+├── data/                  # 数据存储目录（会话数据和统计信息）
+├── picture/               # 图片检测目录（存放待检测的图片）
 ├── .gitignore
+├── requirements.txt       # 项目依赖
 └── README.md
 ```
 
@@ -41,12 +47,14 @@ Sitting-Posture-Recognition-with-MediaPipe/
 
 1. **配置模块（config）**
    - `settings.py`：存储应用配置，如坐姿阈值、提醒方式、窗口大小等。
+   - `app_config.json`：配置文件，用于持久化存储配置。
 
 2. **核心功能模块（core）**
    - **时间统计和日志生成（tracking）**：
      - `tracking.py`：监测坐姿持续时间，记录每种坐姿的开始时间和持续时间，支持会话数据的保存和日志生成。
+     - 包含 `YearlyStatsManager` 类，用于生成年度统计数据。
    - **提醒功能（reminder）**：
-     - `reminder.py`：实现多模态提醒，包括声音提醒和系统通知。
+     - `reminder.py`：实现多模态提醒，包括声音提醒。
    - **UI功能（ui）**：
      - `ui_handler.py`：实现优化的UI设计，包括坐姿状态显示、持续时间显示、操作提示等，支持响应式布局和全屏模式。
 
@@ -57,43 +65,62 @@ Sitting-Posture-Recognition-with-MediaPipe/
    - `pose_utils.py`：提供姿态检测相关的工具函数，如角度计算等。
 
 5. **主入口文件**
-   - `main.py`：原有主入口文件，保持原有功能。
+   - `main.py`：原有主入口文件，保持原有功能（暂停维护）。
    - `app.py`：新的主入口文件，整合所有模块，实现完整的坐姿检测和提醒功能。
 
 ### 数据流
 
-1. **输入**：摄像头画面 → `app.py`
-2. **检测**：`app.py` → `pose_detector.py`（处理画面，返回坐姿状态）
-3. **工具**：`pose_detector.py` → `pose_utils.py`（使用 `findAngle` 计算角度）
-4. **业务逻辑**：
-   - `app.py` → `tracking.py`（更新坐姿持续时间）
-   - `app.py` → `reminder.py`（当持续时间超过阈值时触发提醒）
-   - `app.py` → `ui_handler.py`（绘制UI，显示状态和提醒）
-5. **输出**：处理后的画面 → 显示给用户
+1. **实时检测流程**：
+   - 输入：摄像头画面 → `app.py`
+   - 检测：`app.py` → `pose_detector.py`（处理画面，返回坐姿状态）
+   - 工具：`pose_detector.py` → `pose_utils.py`（使用 `findAngle` 计算角度）
+   - 业务逻辑：
+     - `app.py` → `tracking.py`（更新坐姿持续时间）
+     - `app.py` → `reminder.py`（当持续时间超过阈值时触发提醒）
+     - `app.py` → `ui_handler.py`（绘制UI，显示状态和提醒）
+   - 输出：处理后的画面 → 显示给用户
 
 ## 功能特性
 
-1. **坐姿持续时间监测**：
+1. **实时坐姿检测**：
+   - 使用 MediaPipe 进行人体关键点检测。
+   - 识别多种不良坐姿：低头、仰头、高低肩、左歪头、右歪头、趴桌等。
+   - 实时显示检测结果和建议。
+
+2. **坐姿持续时间监测**：
    - 记录每种坐姿的持续时间。
    - 当不良坐姿持续超过设定阈值时触发提醒。
    - 支持会话数据的保存，便于后续分析。
+   - 生成年度统计数据，按月份和日期排序。
 
-2. **多模态提醒**：
+3. **多模态提醒**：
    - 声音提醒：播放系统提示音。
-   - 系统通知：发送桌面通知（可选）。
    - 视觉提醒：在界面上显示警告信息。
 
-3. **优化的UI设计**：
+4. **优化的UI设计**：
    - 清晰的坐姿状态显示。
    - 实时显示坐姿持续时间。
    - 操作提示信息。
    - 响应式布局，支持窗口大小调整和全屏模式切换。
+   - 系统设置弹窗，可调整提醒阈值、音量等参数。
 
-4. **响应式布局**：
-   - 支持窗口大小调整。
-   - 支持全屏模式切换。
+5. **批量图片检测**：
+   - 支持检测 `picture` 文件夹中的所有图片。
+   - 输出详细的检测结果和统计信息。
+   - 支持两种检测逻辑：新检测逻辑和原始检测逻辑。
 
 ## 安装依赖
+
+1. 克隆项目到本地：
+   ```bash
+   git clone <项目地址>
+   cd Sitting-Posture-Recognition-with-MediaPipe
+   ```
+
+2. 安装依赖：
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## 使用方法
 
@@ -104,25 +131,36 @@ Sitting-Posture-Recognition-with-MediaPipe/
    python app.py
    ```
 
-2. **使用原有功能**：
+2. **使用原有功能**：（暂停维护）
    ```bash
    python main.py
    ```
 
 ### 操作说明
 
-- 按下 `q` 键：退出应用。
-- 按下 `f` 键：切换全屏模式。
+- 双击鼠标左键或点击右上角全屏按钮：切换全屏模式。
+- 在应用界面中：
+  - 点击「开始检测」按钮：开始实时坐姿检测。
+  - 点击「暂停检测」按钮：暂停检测。
+  - 点击「停止检测」按钮：停止检测并保存会话数据。
+  - 点击「报告查询」按钮：查看历史会话数据。
+  - 点击「系统设置」按钮：调整应用配置。
 
 ### 配置调整
 
-打开 `src/config/settings.py` 文件，修改配置参数：
+1. **通过UI界面调整**：
+   - 在应用界面中点击「系统设置」按钮，调整各项参数。
 
-- `POSTURE_THRESHOLD`：不良坐姿持续时间阈值（秒）。
-- `ENABLE_SOUND`：是否启用声音提醒。
-- `ENABLE_NOTIFICATION`：是否启用系统通知。
-- `WINDOW_WIDTH`、`WINDOW_HEIGHT`：窗口大小。
-- `ENABLE_FULLSCREEN`：是否默认启用全屏模式。
+2. **手动修改配置文件**：
+   - 打开 `src/config/app_config.json` 文件，修改配置参数：
+     - `enable_sound`：是否启用声音提醒。
+     - `alert_volume`：提醒音量（0.0-1.0）。
+     - `show_landmarks`：是否显示骨骼点。
+     - `show_lines`：是否显示骨骼连线。
+     - `camera_index`：摄像头索引。
+     - `window_width`、`window_height`：窗口大小。
+     - `enable_fullscreen`：是否默认启用全屏模式。
+     - `posture_threshold`：不良坐姿持续时间阈值（秒）。
 
 ## 架构设计原则
 
@@ -140,6 +178,10 @@ Sitting-Posture-Recognition-with-MediaPipe/
 4. **可测试性**：
    - 各模块可以独立测试，便于发现和修复问题。
 
+5. **可扩展性**：
+   - 支持添加新的功能模块。
+   - 支持修改和优化现有功能。
+
 ## 扩展建议
 
 1. **添加新功能**：
@@ -153,6 +195,12 @@ Sitting-Posture-Recognition-with-MediaPipe/
 
 4. **跨平台支持**：
    - 确保在 Windows、macOS 和 Linux 等主流操作系统上都能正常运行。
+
+5. **添加更多提醒方式**：
+   - 实现系统通知、邮件提醒等更多提醒方式。
+
+6. **添加云端存储**：
+   - 支持将会话数据和统计信息上传到云端，便于跨设备查看。
 
 ## 贡献指南
 

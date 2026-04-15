@@ -16,3 +16,9 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project specific
+picture/
+test.py
+origin_test.py
+origin_utils.py
