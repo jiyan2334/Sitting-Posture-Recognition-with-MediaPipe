@@ -104,12 +104,21 @@ class PostureApp:
         print(f"[INFO] 会话数据已保存: {filename}")
         # --wsy sy--
 
+        # cwy
+        # 只重置UI显示用的变量
+        self.bad_count = 0
+        self.bad_duration = 0.0
         black = np.zeros((480, 640, 3), np.uint8)
         self.ui.update_display(black, {
             "posture": "未检测",
-            "camera_status": "已停止"
+            "duration": 0,
+            "bad_count": 0,
+            "camera_status": "已停止",
+            "frame_status": "未检测到人",
+            "suggestion": "请开始检测"
         })
         print("[INFO] 停止检测")
+        # cwy
 
     def detection_loop(self):
         if not self.is_running or self.is_paused or not self.cap:

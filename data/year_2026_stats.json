@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "generated_at": "2026-04-15T15:20:44.785012",
+  "generated_at": "2026-04-18T21:57:44.691616",
   "months": {
     "01": {
       "month": 1,
@@ -255,6 +255,25 @@
                 "Right tilt": 102.10513305664062,
                 "Leaning on desk": 282.44407653808594,
                 "No person detected": 1911.1613011360168
+              }
+            }
+          ]
+        },
+        "18": {
+          "date": "2026-04-18",
+          "sessions": [
+            {
+              "log_filename": "session_20260418_215637.json",
+              "total_duration": 66.759374,
+              "postures": {
+                "Good posture": 39.75704526901245,
+                "Looking down": 7.793860673904419,
+                "Looking up": 1.2928380966186523,
+                "Uneven shoulders": 8.677803039550781,
+                "Left tilt": 3.1344704627990723,
+                "Right tilt": 4.144370794296265,
+                "Leaning on desk": 1.9589848518371582,
+                "No person detected": 0.0
               }
             }
           ]

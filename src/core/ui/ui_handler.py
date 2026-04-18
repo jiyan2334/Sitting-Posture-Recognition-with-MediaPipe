@@ -964,21 +964,21 @@ class ReportDialog(QDialog):
         stats_layout.addRow("会话数量:", self.lbl_session_count)
 
         # 按钮
-        btn_layout = QHBoxLayout()
-        btn_export = QPushButton("导出数据")
-        btn_export.clicked.connect(self._on_export_data)
-        btn_close = QPushButton("关闭")
-        btn_close.setMinimumHeight(38)
-        btn_close.clicked.connect(self.reject)
-        btn_layout.addWidget(btn_export)
-        btn_layout.addStretch()
-        btn_layout.addWidget(btn_close)
+        # btn_layout = QHBoxLayout()
+        # btn_export = QPushButton("导出数据")
+        # btn_export.clicked.connect(self._on_export_data)
+        # btn_close = QPushButton("关闭")
+        # btn_close.setMinimumHeight(38)
+        # btn_close.clicked.connect(self.reject)
+        # btn_layout.addWidget(btn_export)
+        # btn_layout.addStretch()
+        # btn_layout.addWidget(btn_close)
 
         layout.addWidget(option_group)
         layout.addWidget(session_group)
         layout.addWidget(viz_group, 2)
         layout.addWidget(stats_group)
-        layout.addLayout(btn_layout)
+        # layout.addLayout(btn_layout)
 
         # 设置滚动区域的内容
         scroll_area.setWidget(scroll_content)
